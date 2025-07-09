@@ -1,0 +1,57 @@
+# Grok4 Large Configuration  
+# This configuration defines a 7B parameter model for production use
+
+model:
+  vocab_size: 50432
+  n_layers: 32
+  n_heads: 32
+  d_model: 4096
+  d_ff: 16384
+  max_seq_len: 8192
+  dropout: 0.1
+  bias: false
+
+training:
+  # Data and batching
+  batch_size: 4
+  gradient_accumulation_steps: 8
+  dataloader_num_workers: 8
+  
+  # Optimization
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  
+  # Learning rate schedule
+  warmup_steps: 2000
+  max_steps: 300000
+  
+  # Checkpointing and logging
+  save_steps: 2000
+  eval_steps: 1000
+  logging_steps: 50
+  
+  # Performance optimizations
+  use_mixed_precision: true
+  use_gradient_checkpointing: true
+
+inference:
+  max_tokens: 100
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 40
+  repetition_penalty: 1.1
+  do_sample: true
+  batch_size: 1
+
+# Logging configuration
+logging:
+  level: INFO
+  structured: true
+  rich_console: true
+
+# Wandb configuration (optional)
+wandb:
+  project: "grok4-training"
+  entity: null
+  tags: ["grok4", "large-model", "7B"]
