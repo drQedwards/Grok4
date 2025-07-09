@@ -1,0 +1,51 @@
+# Core ML/AI Dependencies
+torch>=2.0.0
+transformers>=4.30.0
+tokenizers>=0.13.0
+datasets>=2.12.0
+accelerate>=0.20.0
+peft>=0.4.0
+
+# Training and Optimization
+deepspeed>=0.9.0
+wandb>=0.15.0
+tensorboard>=2.13.0
+flash-attn>=2.0.0
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+nltk>=3.8.0
+
+# API and Web Framework
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+websockets>=11.0.0
+
+# Configuration and Utilities
+pyyaml>=6.0.0
+hydra-core>=1.3.0
+omegaconf>=2.3.0
+click>=8.1.0
+tqdm>=4.65.0
+rich>=13.4.0
+
+# Monitoring and Logging
+prometheus-client>=0.17.0
+structlog>=23.1.0
+
+# Development and Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.7.0
+isort>=5.12.0
+flake8>=6.0.0
+mypy>=1.4.0
+pre-commit>=3.3.0
+
+# Optional Performance Optimizations
+triton>=2.0.0
+bitsandbytes>=0.41.0
+xformers>=0.0.20
